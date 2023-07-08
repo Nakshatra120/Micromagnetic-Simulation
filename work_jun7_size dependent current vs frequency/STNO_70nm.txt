@@ -1,11 +1,11 @@
-Nx := 128;
-Ny := 128;
+Nx := 256;
+Ny := 256; // 128 before
 Nz := 1;
 
-Lx := 3e-06;
-Ly := 3e-06;
+Lx := 2e-06;
+Ly := 2e-06;
 Lz := 4.96E-9;
-r:=100E-9
+r:=20E-9
 
 SetGridsize(Nx, Ny, Nz);
 SetCellsize(Lx/Nx,Ly/Ny,Lz/Nz);
@@ -27,9 +27,9 @@ edgesmooth = 8
 //setPBC(3,3,0)// Periodic bdry conditions, 3x repitition in x and y
 
 // Material parameters
-Msat  = 5.89e5
+Msat  = 860e3
 Aex   = 12e-12
-alpha = 0.022
+alpha = 0.01 	// set to 0.07 everywhere, 0.1 at oscillator
 alpha.setregion(2,500)
 alpha.setregion(3,500)
 alpha.setregion(4,500)
@@ -45,17 +45,20 @@ lambda = 1
 epsilonprime = 0
 disableZhangLiTorque = True
 
-//FIXEDLAYER_BOTTOM
+FixedLayer= vector(-1,0,0) //polarization of spin current
+FixedLayerPosition=FIXEDLAYER_TOP
+
+
 //angle := 20
 //px := cos(angle * pi/180)
 //py := sin(angle * pi/180)
-fixedlayer = vector(-1, 0, 0) //polarization of the spin current
+//fixedlayer = vector(-1, 0, 0) //polarization of the spin current
 
 // phi,theta=(0,0) +Z axis
 aphi:=20 //originally 0
 atheta:=30 //originally 10
 
-fieldMag := 0.7
+fieldMag := 1
 fiAngle := aphi*pi/180
 thetaAngle := atheta*pi/180
 

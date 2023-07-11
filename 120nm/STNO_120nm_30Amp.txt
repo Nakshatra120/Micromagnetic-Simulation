@@ -5,7 +5,7 @@ Nz := 1;
 Lx := 2e-06;
 Ly := 2e-06;
 Lz := 4.96E-9;
-r:=20E-9
+r:=120E-9
 
 SetGridsize(Nx, Ny, Nz);
 SetCellsize(Lx/Nx,Ly/Ny,Lz/Nz);
@@ -56,14 +56,14 @@ fixedlayer = vector(-1, 0, 0) //polarization of the spin current
 aphi:= 20 //originally 0
 atheta:=30 //originally 10
 
-fieldMag := 0.7
+fieldMag := 1.0
 fiAngle := aphi*pi/180
 thetaAngle := atheta*pi/180
 
 
 B_ext = vector(fieldMag*cos(fiAngle)*sin(thetaAngle), fieldMag*sin(fiAngle)*sin(thetaAngle), fieldMag*cos(thetaAngle))
 
-Jc:= 0.10 //A
+Jc:= 0.30 //A
 J.setregion(1,vector(0, 0, Jc/(3.14159265*r*r)))
 
 //Schedule output

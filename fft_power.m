@@ -1,5 +1,5 @@
 % import data
-filename = 'table.txt';
+filename = 'table_30nm_20Amp.txt';
 [A,delimiterOut]=importdata(filename);
 
 % pick out m.region1y () column
